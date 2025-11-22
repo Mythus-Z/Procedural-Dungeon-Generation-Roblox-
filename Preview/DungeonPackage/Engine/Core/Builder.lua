@@ -1,32 +1,33 @@
--- Builder.lua (preview)
+-- Builder.lua (Preview)
+-- Responsible for placing actual Parts into the 3D world from voxel data.
+-- Converts voxel types into colored debug parts or final meshes.
 
 local Builder = {}
 
--- Queues a part for batched spawning
-local function makePart(size, cf, typeTag)
-    ...
+local Voxels   = require(script.Parent.Voxels)
+local Settings = require(script.Parent.Parent.Parent.Config.Settings)
+
+-- Spawns one part representing a voxel
+local function placeVoxel(voxelData)
+	-- Instantiates part, applies material & color (omitted)
 end
 
--- Converts voxel clusters into floor + ceiling meshes
-local function buildFloorAndCeiling(voxelMap)
-    ...
+-- Places floors, walls, corridors
+local function assembleStructure(voxelMap)
+	-- Iterate map and call placeVoxel() (omitted)
 end
 
--- Merges ghost walls into long optimized segments
-local function buildWalls(voxelMap)
-    ...
+-- Optional debug rendering path
+local function visualizeDebug(voxelMap)
+	-- Color coding per voxelType (omitted)
 end
 
--- Spawns batched parts into workspace
-local function spawnParts()
-    ...
-end
-
--- Main entry: wipes old dungeon + rebuilds
-function Builder.Build(voxelMap)
-    buildFloorAndCeiling(voxelMap)
-    buildWalls(voxelMap)
-    spawnParts()
+-- Public: builds all geometry
+function Builder.Build()
+	-- 1) Fetch voxel map from Voxels.GetAll()
+	-- 2) Build structure or debug version
+	-- 3) Return number of parts or build stats
+	return 0 -- placeholder count
 end
 
 return Builder
