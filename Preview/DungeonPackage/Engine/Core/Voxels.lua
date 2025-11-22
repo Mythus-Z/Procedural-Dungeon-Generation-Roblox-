@@ -1,29 +1,31 @@
--- Voxels.lua (Preview)
--- Lightweight voxel map system used by Rooms + Corridors.
--- This is a documentation-only preview (non-functional).
+-- Voxels.lua (preview)
 
 local Voxels = {}
+local VoxelMap = {}
 
--- Public API (major functions only)
-
--- Adds or overwrites a voxel at grid-snapped coordinates.
-function Voxels.Add(pos, voxelType, args)
-	-- Stores voxel: Position, Type, and optional metadata (RoomId, CorridorId, etc.)
+-- Rounds world coords to voxel grid
+local function hash(n)
+    ...
 end
 
--- Converts an existing voxel into a new type.
+-- Creates or updates a voxel
+function Voxels.Add(pos, t, metadata)
+    ...
+end
+
+-- Converts voxel type (Room → Corridor, etc.)
 function Voxels.Convert(pos, newType)
-	-- Updates voxel.Type
+    ...
 end
 
--- Retrieves the voxel entry at a given position.
+-- Fetches a voxel at world coordinate
 function Voxels.Get(pos)
-	-- Returns voxel table or nil
+    ...
 end
 
--- Returns the full voxel map and voxel count.
+-- Returns full voxel map + stats
 function Voxels.GetMap()
-	-- Used by Builder for visualization
+    return VoxelMap, ...
 end
 
 return Voxels
