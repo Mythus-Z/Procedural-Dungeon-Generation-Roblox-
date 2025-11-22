@@ -1,31 +1,30 @@
--- Voxels.lua (preview)
+-- Voxels.lua (Preview)
+-- Central voxel registry for floors, walls, corridors, and meta-queries.
+-- Stores 3D grid as hashed map for fast lookups. Preview only.
 
 local Voxels = {}
-local VoxelMap = {}
 
--- Rounds world coords to voxel grid
-local function hash(n)
-    ...
+-- Internal voxel map
+local VoxelMap = {}  -- key → voxel data
+
+-- Transforms world coords into hashable grid key
+local function hash(x, y, z)
+	-- Snaps to grid and combines to unique key (omitted)
 end
 
--- Creates or updates a voxel
-function Voxels.Add(pos, t, metadata)
-    ...
+-- Adds or updates voxel entry
+function Voxels.Add(x, y, z, voxelType)
+	-- Insert/update VoxelMap using hashed coord (omitted)
 end
 
--- Converts voxel type (Room → Corridor, etc.)
-function Voxels.Convert(pos, newType)
-    ...
+-- Fetches voxel data by position
+function Voxels.Get(x, y, z)
+	-- Lookup via hashed key (omitted)
 end
 
--- Fetches a voxel at world coordinate
-function Voxels.Get(pos)
-    ...
-end
-
--- Returns full voxel map + stats
-function Voxels.GetMap()
-    return VoxelMap, ...
+-- Builds a list of all voxels for drawing or exporting
+function Voxels.GetAll()
+	return VoxelMap
 end
 
 return Voxels
