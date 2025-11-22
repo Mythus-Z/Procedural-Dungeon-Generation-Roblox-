@@ -1,26 +1,32 @@
--- Rooms.lua (preview)
+-- Rooms.lua (Preview)
+-- Splits regions into voxel-based rooms and applies size/shape constraints.
+-- Preview keeps structure and purpose while hiding full generation logic.
 
 local Rooms = {}
 
--- Returns a random room shape, size, and aspect ratio
-local function generateRoom()
-    ...
+-- Dependencies (structure only)
+local Voxels   = require(script.Parent.Voxels)
+local Maths    = require(script.Parent.Utils.Maths)
+local Settings = require(script.Parent.Parent.Parent.Config.Settings)
+
+-- Attempts to carve a room inside a BSP leaf
+local function carveRoom(region)
+	-- Shape randomization + size limits (omitted)
+	-- Returns room with voxel list
 end
 
--- Places rooms on the map grid with spacing rules
-local function placeRooms(n)
-    ...
+-- Validates usable room areas
+local function validateRoom(room)
+	-- Ensures min voxel count and proportion (omitted)
 end
 
--- Computes room centers used by corridor builder
-local function computeCenters(rooms)
-    ...
-end
-
-function Rooms.Generate(n)
-    local rooms = placeRooms(n)
-    computeCenters(rooms)
-    return rooms
+-- Public: generate all rooms from BSP leaves
+function Rooms.Generate(leaves)
+	-- 1) Iterate leaves
+	-- 2) Carve room voxel clusters
+	-- 3) Validate and store final rooms
+	-- 4) Add voxel metadata via Voxels.Add()
+	return {} -- placeholder rooms list
 end
 
 return Rooms
