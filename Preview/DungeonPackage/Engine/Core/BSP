@@ -1,48 +1,26 @@
---[[
-    BSP (Binary Space Partitioning) Module — Preview Version
-    --------------------------------------------------------
-    This is a truncated, non-functional preview of the real
-    BSP algorithm used in the dungeon generator.
-
-    The actual implementation includes:
-      • Grid-snapped regional splitting
-      • Adaptive MIN_LEAF_SIZE computation
-      • Robust vertical/horizontal splitting heuristics
-      • Fallback relaxation when splits become impossible
-      • Guaranteed partition count targets
-
-    Full implementation available for commercial licensing.
-]]
+-- BSP.lua (Preview)
+-- Binary Space Partitioning utility used by the dungeon generator.
+-- Non-functional preview. Internal algorithms removed.
 
 local BSP = {}
 
--- Dependencies (actual logic removed)
+-- Dependencies (structure only)
 local Maths = require(script.Parent.Utils.Maths)
 local Settings = require(script.Parent.Parent.Parent.Config.Settings)
 
--- Internal helpers (preview only)
-local function computeInitialLeafSize(rootRegion, targetLeaves)
-    -- Preview placeholder: real math omitted
-    return Settings.GRID_SIZE * 4
+-- Placeholder internal helpers
+local function computeInitialLeafSize(root, targetLeaves)
+	return Settings.GRID_SIZE -- placeholder
 end
 
 local function trySplit(region, MIN_SIZE)
-    -- Preview placeholder: omitted logic for determining
-    -- axis selection, grid snapping, bound validation, etc.
-    return nil
+	return nil -- placeholder
 end
 
--- Public API (kept intact)
+-- Public API (signature only)
 function BSP.GeneratePartitions(rootRegion, targetLeaves)
-    -- Returns a list of partitioned regions.
-    -- Preview version shows structure only.
-    local MIN_SIZE = computeInitialLeafSize(rootRegion, targetLeaves)
-    local leaves = { rootRegion }
-
-    -- In the real version, iterative splitting occurs here,
-    -- including adaptive shrinking of MIN_SIZE and retries.
-
-    return leaves -- Placeholder: real partitions omitted
+	-- Returns partitioned regions (preview placeholder)
+	return { rootRegion }
 end
 
 return BSP
