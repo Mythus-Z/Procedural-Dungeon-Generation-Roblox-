@@ -1,26 +1,25 @@
--- BSP.lua (Preview)
--- Binary Space Partitioning utility used by the dungeon generator.
--- Non-functional preview. Internal algorithms removed.
+-- BSP.lua (preview)
 
 local BSP = {}
 
--- Dependencies (structure only)
-local Maths = require(script.Parent.Utils.Maths)
-local Settings = require(script.Parent.Parent.Parent.Config.Settings)
-
--- Placeholder internal helpers
-local function computeInitialLeafSize(root, targetLeaves)
-	return Settings.GRID_SIZE -- placeholder
+-- Splits a region horizontally or vertically
+local function split(region)
+    ...
 end
 
-local function trySplit(region, MIN_SIZE)
-	return nil -- placeholder
+-- Recursively subdivides space into leaf nodes
+local function subdivide(root, targetLeaves)
+    ...
 end
 
--- Public API (signature only)
-function BSP.GeneratePartitions(rootRegion, targetLeaves)
-	-- Returns partitioned regions (preview placeholder)
-	return { rootRegion }
+-- Converts leaves into actual room definitions
+local function generateRooms(leaves)
+    ...
+end
+
+function BSP.Generate(n)
+    local leaves = subdivide(worldRegion, n)
+    return generateRooms(leaves)
 end
 
 return BSP
