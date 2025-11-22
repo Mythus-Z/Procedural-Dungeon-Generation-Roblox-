@@ -1,31 +1,32 @@
--- Builder.lua (Preview)
--- Converts voxel map → merged parts: floors, ceilings, walls, doors.
--- Shows only public API + high-level architecture.
+-- Builder.lua (preview)
 
 local Builder = {}
 
--- Internals:
--- - PART_TEMPLATES: defines visual styles for floors, ceilings, walls, doors
--- - partsToSpawn: batching queue for high-performance creation
--- - makePart(): adds a part description to queue
--- - spawnParts(): efficient batched Instance.new() spawning
+-- Queues a part for batched spawning
+local function makePart(size, cf, typeTag)
+    ...
+end
 
--- Floor / Ceiling generation:
--- - Groups voxels by RoomId / CorridorId
--- - Merges continuous rectangles
--- - Creates floor + ceiling slabs with PART_TEMPLATES
+-- Converts voxel clusters into floor + ceiling meshes
+local function buildFloorAndCeiling(voxelMap)
+    ...
+end
 
--- Wall generation:
--- - Creates “ghost” thin wall voxels around empty neighbors
--- - Buckets by axis and merges using a union-find structure
--- - Spawns long merged wall segments
+-- Merges ghost walls into long optimized segments
+local function buildWalls(voxelMap)
+    ...
+end
 
--- Main entry point
+-- Spawns batched parts into workspace
+local function spawnParts()
+    ...
+end
+
+-- Main entry: wipes old dungeon + rebuilds
 function Builder.Build(voxelMap)
-	-- Clears previous dungeon
-	-- Builds: floors → ceilings → doors → merged walls
-	-- Spawns final geometry in Workspace
-	-- Returns total build time
+    buildFloorAndCeiling(voxelMap)
+    buildWalls(voxelMap)
+    spawnParts()
 end
 
 return Builder
