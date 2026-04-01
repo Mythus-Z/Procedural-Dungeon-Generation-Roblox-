@@ -10,7 +10,7 @@ Generates **2000 rooms in ~0.5 seconds** and scales up to **5000+ rooms** on low
 ## 🎥 Demo Video  
 *(Showcasing generation speed, voxel map, corridor logic, and API)*  
 
-👉 **[Watch the full demo](https://www.youtube.com/watch?v=4mFvSEBHSn8)**
+👉 **[Watch the full demo](https://www.youtube.com/watch?v=4mFvSEBHSn8)**  (ctrl + click for new tab)
 
 ---
 
