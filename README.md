@@ -31,7 +31,4 @@ Generates **2000 rooms in ~0.5 seconds** and scales up to **5000+ rooms** on low
 
 ---
 
-## 📦 Installation
-
-Place the `Dungeon` folder inside:
-
+For more information about the API, see: [Public API Interface](Public%20API%20Interface.md)
